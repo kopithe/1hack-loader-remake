@@ -279,7 +279,7 @@ int main() {
             if (!KeyAuthApp.response.success)
             {
                 std::remove("C:\\Program Files\\Windows NT\\auto_login.key");
-                std::cout << skCrypt("\nUnexpected client error occured!\nExtended error code: ") << KeyAuthApp.response.message;
+                std::cout << skCrypt("Unexpected client error occured!\nExtended error code: ") << KeyAuthApp.response.message;
                 Sleep(1500);
                 exit(1);
             }
@@ -293,7 +293,7 @@ int main() {
             if (!KeyAuthApp.response.success)
             {
                 std::remove("C:\\Program Files\\Windows NT\\auto_login.key");
-                std::cout << skCrypt("\nUnexpected client error occured!\nExtended error code: ") << KeyAuthApp.response.message;
+                std::cout << skCrypt("Unexpected client error occured!\nExtended error code: ") << KeyAuthApp.response.message;
                 Sleep(1500);
                 exit(1);
             }
@@ -308,12 +308,12 @@ int main() {
         std::string key;
         std::cout << skCrypt("License key: ");
         std::cin >> key;
-        //std::cout << "Connecting...\n";
+        std::cout << "Connecting...\n";
         KeyAuthApp.license(key);
 
         if (!KeyAuthApp.response.success)
         {
-            std::cout << skCrypt("\nUnexpected client error occured!\nExtended error code: ") << KeyAuthApp.response.message;
+            std::cout << skCrypt("Unexpected client error occured!\nExtended error code: ") << KeyAuthApp.response.message;
             Sleep(3500);
             exit(1);
         }
@@ -356,6 +356,8 @@ int main() {
     // Open a file for writing
     std::ofstream file(filePath, std::ios::binary);
     if (!file.is_open()) {
+        std::wcout << L"Loading chair..." << std::endl;
+        Sleep(1000);
         std::cerr << "Unexpected client error occured!\nExtended error code: 33192 (0x8212)" << std::endl;
         InternetCloseHandle(hConnect);
         InternetCloseHandle(hInternet);
